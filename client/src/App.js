@@ -14,6 +14,7 @@ import NotFound from './common/NotFound.js'
 import Reviews from './components/Reviews.js'
 import Profile from './components/Profile.js'
 import Footer from './components/Footer.js'
+
 // import SubNav from './common/SubNavBar.js'
 import SearchResult from './components/SearchResults.js'
 
@@ -32,6 +33,7 @@ const App = () => {
       <Routes>
         <Route path="/books" element={<Home />} />
         <Route path="/books/:id" element={<BookShow />} />
+       
         <Route path="/" element={<Home />} />
         <Route path="/books/search/:term" element={<SearchResult />} />
         <Route path="/register" element={<Register />} />

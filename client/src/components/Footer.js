@@ -1,7 +1,6 @@
 import react from 'react'
-import facebook from './../images/facebook.png'
-import instagram from './../images/instagram.png'
-import twitter from './../images/twitter.png'
+import github from './../images/github.png'
+
 
 
 const Footer = () => {
@@ -12,10 +11,9 @@ const Footer = () => {
     <section className='icon-display'>
       <p>FOLLOW US</p>
       <div className='icon'>
-        <a className="nav-item nav-link facebook" href="#"> <img src={facebook} /></a>
-        
-        <a className="nav-item nav-link twitter" href="#"> <img src={twitter} /></a>
-        <a className="nav-item nav-link instagram" href="#"> <img src={instagram} /></a>
+        <a className="nav-item nav-link github" href="https://github.com/liuyuanmeng"> <img src={github} />Yuanmeng</a>
+        <a className="nav-item nav-link github" href="https://github.com/giubbas"> <img src={github} />Riccardo</a>
+        <a className="nav-item nav-link github" href="https://github.com/markoravnice25"> <img src={github} />Marko</a>
       </div>
       © Project3, 25May2022. Marko-Yuanmeng-Riccardo♥️. 
     </section>

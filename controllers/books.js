@@ -15,7 +15,8 @@ export const showBooks = async (req, res) => {
 export const showSingleBook = async (req, res) => {
   const { id } = req.params
   try {
-    const book = await Book.findById(id).populate('reviews.owner')
+    const book = await Book.findById(id)
+      .populate('reviews.owner')
     if (!book) {
       return res.status(404).json({ message: 'Book not found, try another ID' })
     }

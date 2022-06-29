@@ -3,33 +3,33 @@ import { showBooks, showSingleBook } from '../controllers/books.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { addReview, deleteReview } from '../controllers/booksReviews.js'
 import { secureRoute } from './secureRoute.js'
-import { getProfile, updateProfile, showUsers, deleteUser } from '../controllers/users.js'
+import { getProfile, updateProfile } from '../controllers/users.js'
 import { addItemToWishlist } from '../controllers/users.js'
 import { getWishlist } from '../controllers/users.js'
 // import { getReviews, deleteReview } from '../controllers/reviews.js'
 
 const router = express.Router()
 
-// get all book
+// Get all book
 router.route('/books')
   .get(showBooks)
 
-// get single book
+// Get single book
 router.route('/books/:id')
   .get(showSingleBook)
-
+// Users
 router.route('/register')
   .post(registerUser)
 
 router.route('/login')
   .post(loginUser)
-
+//Reviews
 router.route('/books/:id/reviews')
   .post(secureRoute, addReview)
 
 router.route('/books/:id/reviews/:reviewId')
   .delete(secureRoute, deleteReview)
-
+//Account
 router.route('/account')
   .get(secureRoute, getProfile)
 
@@ -42,11 +42,7 @@ router.route('/account/profile')
 // router.route('/account/reviews/:reviewId')
 //   .delete(secureRoute, deleteReview)
 
-router.route('/users')
-  .get(showUsers)
 
-router.route('/users/:id')
-  .delete(deleteUser)
 
 // add item to wishlist
 router.route('/account/wishlist/:bookId')

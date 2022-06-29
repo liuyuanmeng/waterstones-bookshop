@@ -1,7 +1,10 @@
 import User from '../models/users.js'
 import Book from '../models/books.js'
+// import jwt from 'jsonwebtoken' // jwt is going to provide methods to create a token
 
-// Get the reviews the user made
+/// METHOD: GET
+// Endpoint: account/profile/:userId
+// Description: Return current user's profile by ID, runs after secure route
 export const getProfile = async (req, res) => {
   console.log('getProfile')
 
@@ -45,31 +48,31 @@ export const updateProfile = async (req, res) => {
 }
 
 
-export const showUsers = async (req, res) => {
-  const users = await User.find()
-  console.log('get users')
-  return res.status(200).json(users)
-}
+// export const showUsers = async (req, res) => {
+//   const users = await User.find()
+//   console.log('get users')
+//   return res.status(200).json(users)
+// }
 
-export const deleteUser = async (req, res) => {
+// export const deleteUser = async (req, res) => {
 
-  const { id } = req.params
-  console.log(req.params)
+//   const { id } = req.params
+//   console.log(req.params)
 
-  try {
-    const user = await User.findById(id)
+//   try {
+//     const user = await User.findById(id)
 
-    if (!user) throw new Error('Book not found')
+//     if (!user) throw new Error('Book not found')
 
 
-    await user.remove()
+//     await user.remove()
 
-    return res.sendStatus(204)
-  } catch (error) {
-    console.log(error)
-    return res.status(401).json({ message: 'Unauthorised' })
-  }
-}
+//     return res.sendStatus(204)
+//   } catch (error) {
+//     console.log(error)
+//     return res.status(401).json({ message: 'Unauthorised' })
+//   }
+// }
 
 // TODO add/delete Item to wishlist
 // METHOD: POST
@@ -115,29 +118,4 @@ export const getWishlist = async (req, res) => {
   }
 }
 
-// TODO Delete item from wishlist
-// ? delete method not needed as it has been used in post method for items which have already been added to userAccount.wishlist
-// ? on the front end - the wishlist button will toggle between add/remove to wishlist dependant if the item has/hasn't been added to the wishlist
-// export const removeItemFromWishlist = async (req, res) => {
-//   const { bookId } = req.params
-//   console.log('bookId ->', bookId)
-//   try {
-//     const userAccount = await User.findById(req.verifiedUser._id)
-//     console.log('userAccount ->', userAccount)
-//     if (!userAccount) throw new Error('unauthorised user - please log in to continue')
 
-//     const bookToRemove = await Book.findById(bookId)
-//     console.log('bookToRemove ->', bookToRemove)
-//     if (!bookToRemove) throw new Error('incorrect ID - check URL')
-
-//     console.log('userAccount.wishlist PRE remove ->', userAccount.wishlist)
-//     userAccount.wishlist.remove(bookId)
-//     userAccount.save()
-//     console.log('userAccount.wishlist AFTER remove ->', userAccount.wishlist)
-
-//     return res.status(200).json(userAccount.wishlist)
-//   } catch (error) {
-//     console.log(error)
-//     return res.status(404).json(error)
-//   }
-// }

@@ -6,13 +6,16 @@ import axios from 'axios'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import Col from 'react-bootstrap/esm/Col'
-import { Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 // Authorization
 import { userIsAuthenticated, getTokenFromLocalStorage } from '../helpers/auth'
 
 
 const WishList = () => {
+  const [books, setBooks] = useState([])
+  const [errors, setErrors] = useState(false)
+  const { id } = useParams()
 
   // account state - purely for the purpose of accesing {account.firstName} to display on page
   const [account, setAccount] = useState('')
@@ -35,6 +38,15 @@ const WishList = () => {
       }
     }
     getAccount()
+  }, [])
+
+  // TODO to get single book
+  useEffect(() => {
+    const getData = async () => {
+      const { data } = await axios.get('/api/books/') // * <-- replace with your endpoint
+      setBooks(data)
+    }
+    getData()
   }, [])
 
 
@@ -62,22 +74,28 @@ const WishList = () => {
         </Row>
         <hr className='hr-line-first' />
         <div>
-          {wishlist.map(book => {
-            const { id, title, image, author, description, genre, price, subGenre, yearPublished } = book
+          {wishlist.map((book, index) => {
+            const { _id, title, image, author, description, genre, price, subGenre, yearPublished } = book
             return (
               <>
                 <Row className='row-styling'>
                   <Col sm='3' md='3' lg='2' className='column-one'>
-                    <Link to={`/books/${id}`} key={id}>
-                      <img className='book-image' src={image} alt={title} />
-                    </Link>
+                    <div key={_id}>
+                      {/* <Link to={`/books/${id}`} key={id}> */}
+                      <Link to={`/books/${_id}`}>
+                        <img className='book-image' src={image} alt={title} />
+                      </Link>
+                    </div>
                   </Col>
                   <Col sm='9' md='9' lg='10' className='column-two'>
-                    <Link className='text-decoration-none' to={`/books/${id}`} key={id}>
-                      <div>
-                        <p className='title-whish'>{title}</p>
-                      </div>
-                    </Link>
+                    <div key={_id}>
+                      {/* <Link className='text-decoration-none' to={`/books/${_id}`} key={_id}> */}
+                      <Link to={`/books/${_id}`}>
+                        <div>
+                          <p className='title-whish'>{title}</p>
+                        </div>
+                      </Link>
+                    </div>
                     <div className='col-two-items author-whishlist'>
                       <p>{author}</p>
                     </div>
@@ -95,6 +113,8 @@ const WishList = () => {
                 </Row>
               </>
             )
+
+
           })}
         </div>
       </Container>
