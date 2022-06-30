@@ -41,7 +41,7 @@ Division of Work:
 
 ## Wireframing
 <img src="https://user-images.githubusercontent.com/100864042/176675502-1a413930-f225-4dfd-a8b1-32266bc7be42.png" width="600">
-<img width="600" src="https://user-images.githubusercontent.com/100864042/176675703-afa17c61-6227-4bd9-a345-cf2cf62a2626.png">
+
 <img width="600" src="https://user-images.githubusercontent.com/100864042/176675798-ad894a94-11b7-4fd9-9c3d-7fc229189c0d.png">
 
 
@@ -53,16 +53,18 @@ Division of Work:
 https://user-images.githubusercontent.com/100864042/176675900-5f422834-58dd-49dd-8aa5-4109f0795e78.mov
 
 
-## Final Product of My part - Screenshot Walkthrough
+## Final Product of My part - Screenshot & Featured COde Walkthrough
 <img width="600" alt="Screenshot 2022-06-29 at 15 45 54" src="https://user-images.githubusercontent.com/100864042/176676047-057e38ed-92fc-4748-bfed-ebce1ed925f7.png">
-<img width="600" alt="Screenshot 2022-06-29 at 15 46 08" src="https://user-images.githubusercontent.com/100864042/176676085-19a43954-297b-41b2-a5a4-c4cbe9df621a.png">
-<img width="600" alt="Screenshot 2022-06-29 at 15 46 23" src="https://user-images.githubusercontent.com/100864042/176676107-7839a958-0122-4415-b409-a47299ed6982.png">
+
+
 <img width="600" alt="Screenshot 2022-06-29 at 15 46 36" src="https://user-images.githubusercontent.com/100864042/176676120-886c6369-ee49-4e21-be85-76bd0e340c92.png">
-<img width="600" alt="Screenshot 2022-06-29 at 15 45 45" src="https://user-images.githubusercontent.com/100864042/176676206-fae167a2-3c71-4930-9e23-312825442c34.png">
 
 
-#### Add serching in Navbar
+
+#### Added serching in Navbar
+
 I have added serching in the Navbar to give users better experience.
+<img width="600" alt="Screenshot 2022-06-29 at 15 45 45" src="https://user-images.githubusercontent.com/100864042/176676206-fae167a2-3c71-4930-9e23-312825442c34.png">
 
 ``` const handleChange = (e) => {
     setTerm(e.target.value)
@@ -84,8 +86,26 @@ I have added serching in the Navbar to give users better experience.
  
         </form>
 ```
-####
-####
+
+#### Added books that shared  the same subGenre 
+
+<img width="600" alt="Screenshot 2022-06-29 at 15 46 08" src="https://user-images.githubusercontent.com/100864042/176676085-19a43954-297b-41b2-a5a4-c4cbe9df621a.png">
+
+```  <Slider {...settings} className='carousel-wrapper'>
+              {similarBooks.filter(item => item.subGenre === book.subGenre && item.id !== book.id).map((item, index) => {
+                return <SimilarBookDisplay key={item.id} item={item} />
+              })}
+            </Slider>
+ ```
+
+#### Account Page
+
+<img width="600" src="https://user-images.githubusercontent.com/100864042/176675703-afa17c61-6227-4bd9-a345-cf2cf62a2626.png">
+
+#### Profile Page
+
+<img width="600" alt="Screenshot 2022-06-29 at 15 46 23" src="https://user-images.githubusercontent.com/100864042/176676107-7839a958-0122-4415-b409-a47299ed6982.png">
+
 
 ## Reflection
 ### challenges 
