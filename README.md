@@ -53,13 +53,9 @@ Division of Work:
 https://user-images.githubusercontent.com/100864042/176675900-5f422834-58dd-49dd-8aa5-4109f0795e78.mov
 
 
-## Final Product of My part - Screenshot & Featured COde Walkthrough
+## Final Product of My part - Screenshot & Featured Code Walkthrough
+#### Bookshow page
 <img width="600" alt="Screenshot 2022-06-29 at 15 45 54" src="https://user-images.githubusercontent.com/100864042/176676047-057e38ed-92fc-4748-bfed-ebce1ed925f7.png">
-
-
-<img width="600" alt="Screenshot 2022-06-29 at 15 46 36" src="https://user-images.githubusercontent.com/100864042/176676120-886c6369-ee49-4e21-be85-76bd0e340c92.png">
-
-
 
 #### Added serching in Navbar
 
@@ -88,6 +84,7 @@ I have added serching in the Navbar to give users better experience.
 ```
 
 #### Added books that shared  the same subGenre 
+Use the filter to select books from the same subgenre, and the id of the book is not the one I have already displayed above.
 
 <img width="600" alt="Screenshot 2022-06-29 at 15 46 08" src="https://user-images.githubusercontent.com/100864042/176676085-19a43954-297b-41b2-a5a4-c4cbe9df621a.png">
 
@@ -99,6 +96,19 @@ I have added serching in the Navbar to give users better experience.
  ```
 
 #### Account Page
+Only the first name of users would show on the page, and users can use two links to navigate their profile and wishlist.
+``` <h5>Hi {account.firstName}, welcome to your account dashboard</h5>```
+``` <a href="/account/profile/" className="btn">👤Your Profile</a>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+                <a href="/account/wishlist/" className="btn">❤️Wish Lists</a>
+  ```
+                
+
 
 <img width="600" alt="Screenshot 2022-06-29 at 15 46 23" src="https://user-images.githubusercontent.com/100864042/176676107-7839a958-0122-4415-b409-a47299ed6982.png">
 
@@ -112,8 +122,86 @@ I have added serching in the Navbar to give users better experience.
 
 ## Reflection
 ### challenges 
+On the profile page, I faced issues updating all the sections, I have created one handle change to handle the whole form details, but only the top section with users' names has been updated, didn't update email or password. I had to create multip handles to control each area to handle the whole form changing.
+``` const handleSubmitDetails = async (e) => {
+    e.preventDefault()
+    try {
+      const formDataDetails = {
+        title: formData.title,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+      }
+      console.log('form', formDataDetails)
+      const { data } = await axios.put('/api/account/profile', formDataDetails, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+
+      })
+      console.log('data', data)
+
+    } catch (error) {
+      console.log(error)
+
+    }
+  }
+
+  const handleSubmitEmail = async (e) => {
+    e.preventDefault()
+    try {
+
+      const formDataEmail = {
+        email: formData.email,
+        confirmEmail: formData.confirmEmail,
+
+      }
+
+      const { data } = await axios.put('/api/account/profile', formDataEmail, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+
+      })
+
+    } catch (error) {
+      console.log(error)
+
+    }
+  }
+
+  const handleSubmitPassword = async (e) => {
+    e.preventDefault()
+    try {
+      const formDataPassword = {
+        password: formData.password,
+        _passwordConfirmation: formData._passwordConfirmation,
+
+      }
+
+      const { data } = await axios.put('/api/account/profile', formDataPassword, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+
+      })
+
+    } catch (error) {
+      console.log(error)
+
+    }
+  }
+```
+
 ### Key Learnings
-### Future Features
+* Using  MERN
+* Designing relationships on the Back-end and control flow on the Frend-end
+* Working in group 
+
+### Future Improvements
+* Responsive styling
+* Review display render
+* No repetite books add in the wishlists 
+
 
 
 
