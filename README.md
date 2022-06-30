@@ -196,6 +196,8 @@ On the profile page, I faced issues updating all the sections, I have created on
 * Using  MERN
 * Designing relationships on the Back-end and control flow on the Frend-end
 * Working in group 
+* Prioritise tasks
+* Time management 
 
 ### Future Improvements
 * Responsive styling
