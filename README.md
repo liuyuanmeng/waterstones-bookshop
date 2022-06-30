@@ -100,11 +100,14 @@ I have added serching in the Navbar to give users better experience.
 
 #### Account Page
 
-<img width="600" src="https://user-images.githubusercontent.com/100864042/176675703-afa17c61-6227-4bd9-a345-cf2cf62a2626.png">
+<img width="600" alt="Screenshot 2022-06-29 at 15 46 23" src="https://user-images.githubusercontent.com/100864042/176676107-7839a958-0122-4415-b409-a47299ed6982.png">
 
 #### Profile Page
 
-<img width="600" alt="Screenshot 2022-06-29 at 15 46 23" src="https://user-images.githubusercontent.com/100864042/176676107-7839a958-0122-4415-b409-a47299ed6982.png">
+<img width="600" alt="Screenshot 2022-06-29 at 15 46 36" src="https://user-images.githubusercontent.com/100864042/176676120-886c6369-ee49-4e21-be85-76bd0e340c92.png">
+
+
+
 
 
 ## Reflection
