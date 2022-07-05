@@ -2,7 +2,7 @@
 
 ## Overview
 
-This was the third project for the Software Engineering Immersive course with GA, which consisted of a full-stack group project built using the MERN stack, the whole project was built and delivered in a week.
+This was the third project for the Software Engineering Immersive course with GA, which consisted of a full-stack group project built using the MERN stack, the whole project was built and delivered in a week. The idea was to have a database of books and an app which models the Waterstones website, which we used as a guide for this project.
 
 You can find the deployed version of the project [here](https://firestonebookshop.herokuapp.com/).
 
@@ -27,9 +27,11 @@ You can find the deployed version of the project [here](https://firestonebooksho
 ### Features
 * Homepage - index of all books
 * Navbar - allow users to navigate across between different pages on the site and serching books by name or author
-* User Login/Register
-* Account - users can find their profile and wishlist
+* User Login/Register Page
+* Account Page - users can find their profile and wishlist
 * Book show page - detailed view of book, where you can add book to your wishlist, add review and delete review if you are the owner. Same subgerne added.
+* Wishlist Page
+All content was sourced from the [Waterstones](https://www.waterstones.com/) website
 
 ## Approach Taken
 Planning (day1) On the first day, we decided on the theme for our project and used Exaclidraw and Google Docs to record working progress and tasks. (day 2&3) We created the back end together, and after all the relations tested in insomnia, we decided to work on the front end separately. 
@@ -40,7 +42,12 @@ Division of Work:
 * Riccardo - Homepage, Post review, delete review
 
 ## Wireframing
+
+Back-End design
+The Back-End consisted of a database which held our API; a router (and secure route) through which all requests were made; controllers which would access the model before returning the request back to the User.
 <img src="https://user-images.githubusercontent.com/100864042/176675502-1a413930-f225-4dfd-a8b1-32266bc7be42.png" width="600">
+Front-End design
+We wanted to keep the Front-End Design to a minimum and add on features if we had time at the end. As can be seen in the wireframe, there are three main pages: home page; show page; wishlist page. We didn't add the Register/Login pages to the wireframe as they were a given.
 
 <img width="600" src="https://user-images.githubusercontent.com/100864042/176675798-ad894a94-11b7-4fd9-9c3d-7fc229189c0d.png">
 
@@ -121,7 +128,7 @@ Only the first name of users would show on the page, and users can use two links
 
 
 ## Reflection
-### challenges 
+### Challenges 
 On the profile page, I faced issues updating all the sections, I have created one handle change to handle the whole form details, but only the top section with users' names has been updated, didn't update email or password. I had to create multip handles to control each area to handle the whole form changing.
 ``` const handleSubmitDetails = async (e) => {
     e.preventDefault()
@@ -203,6 +210,7 @@ On the profile page, I faced issues updating all the sections, I have created on
 * Responsive styling
 * Review display render
 * No repetite books add in the wishlists 
+
 
 
 
