@@ -1,8 +1,21 @@
-# Project 3: Waterstones Bookshop
+# Project 3: Firestone Bookshop
+
+## Brief
+
+* Build a full-stack MERN (MongoDB, Express.js, React, Node.js) application by making your own Back-End and Front-End
+* Use MongoDB as database for your API using Node.js for building the Back-End
+
+* Consume your API with a separate front-end built with React
+
+* Be a complete product which most likely means multiple relationships and CRUD functionality
+
+* implement thoughtful use stories/wireframes that are significant enough to help you know which features are core and which you can cut out
+* Be deployed online
+
 
 ## Overview
 
-This project was the third for the Software Engineering Immersive course with GA, which consisted of a full-stack group project built using the MERN stack; the whole project was built and delivered in a week. The idea was to have a database of books and an app which mirrors the Waterstones website, which we used as a guide for this project.
+This project was the third for the Software Engineering Immersive course with GA, which consisted of a full-stack group project built using the MERN stack; the whole project was built in a team of 3 students and delivered in a week. The idea was to have a database of books and an app which mirrors the Waterstones website, which we used as a guide for this project.
 
 You can find the deployed version of the project [here](https://firestonebookshop.herokuapp.com/).
 
@@ -125,7 +138,10 @@ Only the first name of users show up on the page, and users can use two links to
 
 
 ## Reflection
-### Challenges 
+## Wins
+* The site's styling is similar to the Waterstones website, which we modelled. 
+* Having a fully-function Full-Stack Mern app.
+
 
 
 
