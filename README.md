@@ -152,6 +152,15 @@ Only the first name of users show up on the page, and users can use two links to
 * Prioritising tasks
 * Time management 
 
+### Challenges
+* Merge conflicts- This was each of our first team projects using Github branches, so when we worked on the same code block, caused merge conflicts, this could have been avoided with more effective communication.
+
+
+### Bugs
+* When deleting a review, all reviews for that book are simultaneously deleted.
+* The same Book can be added to wishlists multiple times 
+
+
 ### Future Improvements
 * Responsive styling
 * Review display render
