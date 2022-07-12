@@ -59,8 +59,12 @@ Division of Work:
 Back-End design
 The Back-End consisted of a database which held our API; a router (and secure route) through which all requests were made; controllers which would access the model before returning the request to the User.
 <img src="https://user-images.githubusercontent.com/100864042/176675502-1a413930-f225-4dfd-a8b1-32266bc7be42.png" width="600">
+
+
 Front-End design
 We wanted to keep the Front-End design relatively simple and add on features if we had time in the end. As seen in the wireframe, there are three main pages: the home page, the book show page, and the wishlist page. We didn't add the Register/Login pages to the wireframe as they were a given.
+
+
 
 <img width="600" src="https://user-images.githubusercontent.com/100864042/176675798-ad894a94-11b7-4fd9-9c3d-7fc229189c0d.png">
 
